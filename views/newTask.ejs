@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jquery.js"></script>
+</head>
+
+<body>
+
+    <div class="bg-light">
+
+    <!--Header-->
+    <div class="container-fluid d-flex justify-content-center bg-light">
+        <h1 class="text-Primary font-weight-bold">Task Manager</h1>
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center">
+    <div>
+
+        <div class="container-fluid d-flex justify-content-center bg-light">
+
+            <!--Task details-->
+            <form action="/tasks/save" method="POST" class="form-group" name="task" onsubmit="return taskValidation(this)">
+                <div class="form-group d-flex justify-content-center">
+                    <label class="form-control">Enter Task Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Task Name">
+                </div>
+
+                <div class="form-group d-flex justify-content-center">
+                    <label class="form-control">Date</label>
+                    <input type="date" name="date">
+                </div>
+
+                <div class="form-group d-flex justify-content-center">
+                    <label class="form-control">Description</label>
+                    <input type="textarea" name="desc" placeholder="Describe The Task">
+                </div>
+                
+                <input type="hidden" name="email" value="<%=name%>">
+
+                <div class="form-group d-flex justify-content-center">
+                    <input type="submit" name="saveTask" class="btn btn-success" value="Save Task">                    
+                </div>
+            </form>
+
+        </div>
+  
+    </div>
+    </div>
+    </div>
+
+    <!--Script-->
+    <script src="/javascripts/myScript.js"></script>
+
+</body>
+</html>
